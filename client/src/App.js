@@ -4,7 +4,6 @@ import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 
 import Movie from "./Movies/Movie";
 import MovieList from "./Movies/MovieList"
-import MovieCard from "./Movies/MovieCard"
 import SavedList from './Movies/SavedList';
 
 const App = () => {
@@ -36,7 +35,9 @@ const App = () => {
       <Route exact path='/'>
         <MovieList movies={movieList}/>
       </Route>
-      <Route path = '/movies/:id'/>
+      <Route path = '/movies/:id'>
+        <Movie movie={movieList}/>
+        </Route>
       </Switch>
     </div>
   );
